@@ -125,6 +125,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
             {onOpenMootCourt && (
               <button
                 onClick={() => onOpenMootCourt()}
+                aria-label="Convene Moot Court chamber"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B] bg-[#141C2B] text-[#EFE9DD] hover:bg-[#4A5364] transition-colors cursor-pointer font-bold"
               >
                 <Scale className="w-3.5 h-3.5 text-[#DFC386]" />
@@ -135,6 +136,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
               <button
                 onClick={onExportReport}
                 id="btn-export-summary"
+                aria-label="Export Lawyer Consultation Brief"
                 className="inline-flex items-center gap-2 px-3 py-1.5 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B] bg-[#EFE9DD] text-[#141C2B] hover:bg-[#141C2B] hover:text-[#EFE9DD] transition-colors cursor-pointer"
               >
                 <Share2 className="w-3.5 h-3.5 text-[#2C4A8F]" />
@@ -247,6 +249,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
                   <button
                     key={sev}
                     onClick={() => setSeverityFilter(sev)}
+                    aria-label={`Filter concerns by ${sev === 'all' ? 'all severities' : `${sev} severity`}`}
                     className={`px-2.5 py-1 font-mono text-[11px] tracking-[0.08em] uppercase border transition-colors cursor-pointer ${
                       isActive
                         ? 'border-[#141C2B] bg-[#EFE9DD] text-[#141C2B] font-bold border-b-2 border-b-[#2C4A8F]'
@@ -298,6 +301,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
                       {onOpenMootCourt && (
                         <button
                           onClick={() => onOpenMootCourt(concern.clauseId)}
+                          aria-label={`Spar concern ${concern.id} for clause ${concern.clauseId} in Moot Court`}
                           className="font-mono text-[11px] tracking-[0.08em] text-[#2C4A8F] hover:underline flex items-center gap-1 cursor-pointer font-bold mr-1"
                         >
                           <Scale className="w-3.5 h-3.5 text-[#2C4A8F]" />
@@ -307,6 +311,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
                       {onSelectClause && (
                         <button
                           onClick={() => onSelectClause(concern.clauseId)}
+                          aria-label={`Inspect clause ${concern.clauseId} in document viewer`}
                           className="font-mono text-[11px] tracking-[0.08em] text-[#4A5364] hover:text-[#141C2B] flex items-center gap-1 cursor-pointer"
                         >
                           <span>Inspect Clause {concern.clauseId}</span>
@@ -315,6 +320,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
                       )}
                       <button
                         onClick={() => toggleResolved(concern.id)}
+                        aria-label={`Mark concern ${concern.id} as ${isResolved ? 'unresolved' : 'resolved'}`}
                         className={`font-mono text-[10px] tracking-[0.08em] uppercase px-2 py-0.5 border border-[#141C2B]/20 cursor-pointer ${
                           isResolved ? 'bg-[#141C2B] text-[#EFE9DD]' : 'bg-[#EFE9DD] text-[#4A5364]'
                         }`}
@@ -361,6 +367,7 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
                         </span>
                         <button
                           onClick={() => copyRevision(concern.id, concern.suggestedRevision)}
+                          aria-label={`Copy counter-proposal revision for concern ${concern.id}`}
                           className="font-mono text-[10px] tracking-[0.08em] uppercase text-[#141C2B] hover:text-[#2C4A8F] flex items-center gap-1 cursor-pointer"
                         >
                           {isCopied ? <Check className="w-3 h-3 text-[#2C4A8F]" /> : <Copy className="w-3 h-3" />}
@@ -394,6 +401,8 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
             </div>
             <button
               onClick={() => setShowMissing(!showMissing)}
+              aria-label="Toggle missing customary protections section"
+              aria-expanded={showMissing}
               className="text-[#767E8C] hover:text-[#141C2B] cursor-pointer"
             >
               {showMissing ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -432,6 +441,8 @@ export const SummaryPanel: React.FC<SummaryPanelProps> = ({
             </div>
             <button
               onClick={() => setShowSafeguards(!showSafeguards)}
+              aria-label="Toggle identified safeguards section"
+              aria-expanded={showSafeguards}
               className="text-[#767E8C] hover:text-[#141C2B] cursor-pointer"
             >
               {showSafeguards ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}

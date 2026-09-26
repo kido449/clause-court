@@ -50,6 +50,7 @@ export const RiskMeter: React.FC<RiskMeterProps> = ({ score, riskLevel, breakdow
             <svg
               className="w-full h-full transform -rotate-[210deg]"
               viewBox={`0 0 ${size} ${size}`}
+              aria-hidden="true"
             >
               {/* Outer calibration ring */}
               <circle

@@ -7,7 +7,7 @@
   --color-ground-secondary: #E5DED0;
   --color-ink: #141C2B;
   --color-ink-secondary: #4A5364;
-  --color-muted: #767E8C;
+  --color-muted: #545C6A;
   --color-ink-blue: #2C4A8F;
 }
 
@@ -22,7 +22,7 @@
   --paper-ground-secondary: #E5DED0;
   --ink-primary: #141C2B;
   --ink-secondary: #4A5364;
-  --ink-muted: #767E8C;
+  --ink-muted: #545C6A;
   --ink-blue: #2C4A8F;
   --hairline-border: rgba(20, 28, 43, 0.16);
 }
@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6, .heading-serif {
   font-size: 11px;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #767E8C;
+  color: #545C6A;
   line-height: 1.9;
 }
 

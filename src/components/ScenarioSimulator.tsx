@@ -101,6 +101,8 @@ export const ScenarioSimulator: React.FC<ScenarioSimulatorProps> = ({
             >
               <button
                 onClick={() => setActiveScenario(isOpen ? null : sc.id)}
+                aria-label={`Toggle scenario question: ${sc.question}`}
+                aria-expanded={isOpen}
                 className="w-full p-3.5 text-left flex items-start justify-between gap-3 hover:bg-[#EAE4D7] transition-colors cursor-pointer"
               >
                 <div className="flex items-start gap-2.5">

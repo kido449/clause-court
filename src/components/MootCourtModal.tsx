@@ -162,6 +162,7 @@ export const MootCourtModal: React.FC<MootCourtModalProps> = ({
 
           <button
             onClick={onClose}
+            aria-label="Close Moot Court dialog"
             className="p-1 border border-[#141C2B]/20 hover:bg-[#EFE9DD] cursor-pointer text-[#767E8C] hover:text-[#141C2B]"
           >
             <X className="w-4 h-4" />
@@ -198,6 +199,7 @@ export const MootCourtModal: React.FC<MootCourtModalProps> = ({
             {isStreaming ? (
               <button
                 onClick={handleFastForward}
+                aria-label="Skip debate streaming to verdict"
                 className="px-3 py-1 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B]/20 bg-[#E5DED0] text-[#4A5364] hover:text-[#141C2B] flex items-center gap-1 cursor-pointer"
               >
                 <FastForward className="w-3 h-3 text-[#2C4A8F]" />
@@ -206,6 +208,7 @@ export const MootCourtModal: React.FC<MootCourtModalProps> = ({
             ) : (
               <button
                 onClick={handleStartSparring}
+                aria-label="Convene Moot Court debate"
                 className="px-4 py-1 font-mono text-[11px] tracking-[0.09em] uppercase font-bold border border-[#141C2B] bg-[#141C2B] text-[#EFE9DD] hover:bg-[#4A5364] flex items-center gap-1.5 cursor-pointer"
               >
                 <Play className="w-3 h-3 text-[#DFC386]" />
@@ -368,6 +371,7 @@ export const MootCourtModal: React.FC<MootCourtModalProps> = ({
           </span>
           <button
             onClick={onClose}
+            aria-label="Return to Risk Dossier"
             className="px-4 py-1.5 border border-[#141C2B]/20 bg-[#EFE9DD] text-[#141C2B] hover:text-[#141C2B] hover:border-[#141C2B] cursor-pointer uppercase tracking-[0.08em]"
           >
             Return to Dossier

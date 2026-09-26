@@ -80,6 +80,7 @@ export const DocumentSelector: React.FC<DocumentSelectorProps> = ({
                     onSelectSample(sample.id);
                   }}
                   disabled={isLoading}
+                  aria-label={`Select sample contract: ${sample.title}`}
                   className={`px-3 py-1 font-mono text-[11px] tracking-[0.08em] transition-all cursor-pointer flex items-center gap-1.5 border border-[#141C2B]/16 ${
                     isSelected
                       ? 'bg-[#E5DED0] text-[#141C2B] font-bold border-b-2 border-b-[#2C4A8F]'
@@ -95,6 +96,8 @@ export const DocumentSelector: React.FC<DocumentSelectorProps> = ({
             <button
               onClick={() => setIsCustomOpen(!isCustomOpen)}
               disabled={isLoading}
+              aria-label="Toggle custom document paste or upload panel"
+              aria-expanded={isCustomOpen}
               className={`px-3 py-1 font-mono text-[11px] tracking-[0.08em] transition-all cursor-pointer flex items-center gap-1.5 border border-[#141C2B]/16 ${
                 isCustomOpen
                   ? 'bg-[#E5DED0] text-[#141C2B] font-bold border-b-2 border-b-[#2C4A8F]'
@@ -168,6 +171,7 @@ export const DocumentSelector: React.FC<DocumentSelectorProps> = ({
                   <button
                     type="button"
                     onClick={() => setIsCustomOpen(false)}
+                    aria-label="Cancel custom document input"
                     className="px-3 py-1.5 font-mono text-[11px] tracking-[0.08em] border border-[#141C2B]/20 bg-[#EFE9DD] text-[#4A5364] hover:text-[#141C2B]"
                   >
                     Cancel
@@ -175,6 +179,7 @@ export const DocumentSelector: React.FC<DocumentSelectorProps> = ({
                   <button
                     type="submit"
                     disabled={!customText.trim() || isLoading}
+                    aria-label="Commence contract risk audit"
                     className="px-4 py-1.5 font-mono text-[11px] tracking-[0.08em] font-bold border border-[#141C2B] bg-[#141C2B] text-[#EFE9DD] hover:bg-[#4A5364] transition-colors disabled:opacity-50"
                   >
                     {isLoading ? 'Auditing Agreement...' : 'Commence Audit'}

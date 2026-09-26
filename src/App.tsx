@@ -114,6 +114,7 @@ export default function App() {
             <button
               onClick={() => setViewMode('summary')}
               id="tab-summary-view"
+              aria-label="Switch to Risk Dossier view"
               className={`inline-flex items-center gap-1.5 px-3 py-1 font-mono text-[11px] tracking-[0.08em] uppercase transition-all cursor-pointer border ${
                 viewMode === 'summary'
                   ? 'border-[#141C2B] bg-[#E5DED0] text-[#141C2B] font-bold border-b-2 border-b-[#2C4A8F]'
@@ -126,6 +127,7 @@ export default function App() {
             <button
               onClick={() => setViewMode('split')}
               id="tab-split-view"
+              aria-label="Switch to Split Inspector view"
               className={`inline-flex items-center gap-1.5 px-3 py-1 font-mono text-[11px] tracking-[0.08em] uppercase transition-all cursor-pointer border ${
                 viewMode === 'split'
                   ? 'border-[#141C2B] bg-[#E5DED0] text-[#141C2B] font-bold border-b-2 border-b-[#2C4A8F]'
@@ -138,6 +140,7 @@ export default function App() {
             <button
               onClick={() => setViewMode('document')}
               id="tab-doc-view"
+              aria-label="Switch to Clause Text view"
               className={`inline-flex items-center gap-1.5 px-3 py-1 font-mono text-[11px] tracking-[0.08em] uppercase transition-all cursor-pointer border ${
                 viewMode === 'document'
                   ? 'border-[#141C2B] bg-[#E5DED0] text-[#141C2B] font-bold border-b-2 border-b-[#2C4A8F]'
@@ -152,6 +155,7 @@ export default function App() {
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => handleOpenMootCourt()}
+              aria-label="Convene Moot Court chamber"
               className="inline-flex items-center gap-1.5 px-3 py-1 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B] bg-[#141C2B] text-[#EFE9DD] hover:bg-[#4A5364] transition-colors cursor-pointer font-bold"
             >
               <Scale className="w-3.5 h-3.5 text-[#DFC386]" />
@@ -159,6 +163,7 @@ export default function App() {
             </button>
             <button
               onClick={() => setIsExportOpen(true)}
+              aria-label="Export Lawyer Consultation Brief"
               className="inline-flex items-center gap-1.5 px-3 py-1 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B]/20 bg-[#EFE9DD] text-[#141C2B] hover:border-[#141C2B] transition-colors cursor-pointer"
             >
               <Share2 className="w-3.5 h-3.5 text-[#2C4A8F]" />
@@ -187,6 +192,7 @@ export default function App() {
             <p className="font-mono text-[11px] text-[#4A5364] mb-4">{error}</p>
             <button
               onClick={() => runAnalysis(documentText, currentContractId)}
+              aria-label="Retry contract examination"
               className="px-4 py-1.5 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B] bg-[#141C2B] text-[#EFE9DD] hover:bg-[#4A5364] transition-colors"
             >
               Retry Examination
@@ -228,6 +234,7 @@ export default function App() {
                     </div>
                     <button
                       onClick={() => handleOpenMootCourt()}
+                      aria-label="Enter Moot Court Chamber"
                       className="w-full py-2 px-3 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B] bg-[#141C2B] text-[#EFE9DD] hover:bg-[#4A5364] transition-colors cursor-pointer font-bold"
                     >
                       Enter Moot Court Chamber →
@@ -277,6 +284,7 @@ export default function App() {
                   </div>
                   <button
                     onClick={() => setViewMode('summary')}
+                    aria-label="Return to Risk Dossier view"
                     className="px-3.5 py-1.5 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B] bg-[#EFE9DD] text-[#141C2B] hover:bg-[#141C2B] hover:text-[#EFE9DD] transition-colors cursor-pointer self-start sm:self-auto"
                   >
                     ← Return to Dossier

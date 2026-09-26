@@ -1,5 +1,6 @@
 import { Request, Response, Router } from 'express';
 import dotenv from 'dotenv';
+import rateLimit from 'express-rate-limit';
 import { GoogleGenAI } from '@google/genai';
 import { SAMPLE_CONTRACTS } from '../src/data/sampleContracts';
 import { PRECOMPUTED_ANALYSES, analyzeContractHeuristic, splitContractIntoClauses } from '../src/services/analyzer';
@@ -8,6 +9,18 @@ import { DocumentAnalysisResult } from '../src/types';
 dotenv.config();
 
 export const apiRouter = Router();
+
+// Rate limiting: 100 requests per 15 minutes per IP (disabled in test runs)
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests from this IP, please try again after 15 minutes.' },
+  skip: () => process.env.NODE_ENV === 'test',
+});
+
+apiRouter.use(apiLimiter);
 
 // Configuration from environment
 const GROQ_BASE_URL = process.env.GROQ_BASE_URL || 'https://api.groq.com/openai/v1';
@@ -101,6 +114,9 @@ apiRouter.post('/moot-court', async (req: Request, res: Response) => {
     };
 
     const targetText = clauseText || contractText || '';
+    if (targetText.length > 100000) {
+      return res.status(400).json({ error: 'Input text exceeds maximum allowed length of 100,000 characters.' });
+    }
     const cid = clauseId || 'Contested Clause';
 
     const groqKey = getGroqApiKey();
@@ -109,7 +125,9 @@ apiRouter.post('/moot-court', async (req: Request, res: Response) => {
     if (groqKey && !isMock) {
       const prompt = `You are running a simulated Moot Court for contractual dispute analysis.
 Clause ID: ${cid}
-Clause Text: "${targetText.slice(0, 4000)}"
+<document>
+${targetText.slice(0, 4000)}
+</document>
 
 Return a JSON object with:
 1. "tenant": The argument from the non-lawyer tenant/client advocate arguing why this clause is dangerous, ambiguous, unconscionable, or unfair (100-140 words, citing exact quotes).
@@ -158,6 +176,10 @@ apiRouter.post('/analyze', async (req: Request, res: Response) => {
 
     if (!text || typeof text !== 'string' || text.trim().length === 0) {
       return res.status(400).json({ error: 'Contract text is required.' });
+    }
+
+    if (text.length > 100000) {
+      return res.status(400).json({ error: 'Contract text exceeds maximum allowed length of 100,000 characters.' });
     }
 
     const trimmedText = text.trim();

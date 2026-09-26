@@ -42,6 +42,44 @@
 
 ---
 
+## 🎯 Problem Statement Alignment
+
+### The Problem: Asymmetric Legal Power & Hostile Contracts
+Non-lawyers—freelancers, residential and commercial tenants, small business operators, and independent contractors—routinely sign complex legal agreements containing severe, asymmetric liabilities without understanding the fine print. Retaining legal counsel for routine contract reviews costs **$300 to $800+ per hour**, leaving over 90% of non-lawyers exposed to predatory contractual traps:
+- **Uncapped Indemnities**: Shifting financial liability for counterparty negligence or third-party claims onto the signatory.
+- **Silent Auto-Renewals**: Strict 60-to-90 day opt-out windows locking signatories into costly multi-year commitments.
+- **Unilateral Fee Shifting & Deposit Forfeitures**: Aggressive liquidated damage clauses allowing immediate forfeiture of deposits without notice or cure periods.
+- **Dangling Cross-References & Ambiguities**: Obscure references to external house rules or unspecified policy manuals.
+
+### How Clause Court Solves It
+Clause Court serves as an **AI-powered contract sparring partner** that levels the playing field:
+1. **Document-Grounded Hazard Detection**: Extracts exact verbatim dangerous quotes without hallucinations.
+2. **Plain-Language Demystification**: Translates opaque legal jargon into tangible business, financial, and personal risks.
+3. **Adversarial Moot Court Simulation**: Pits AI legal advocates against each other so users observe the real arguments a court or arbitrator would hear.
+4. **Actionable Counter-Proposals**: Generates equitable replacement phrasing ready to paste into counter-offers.
+5. **Executive Lawyer Brief**: Equips users with a structured, 1-page summary and 8 prioritized attorney questions if professional review is warranted.
+
+---
+
+## 🤖 GenAI Integration Architecture
+
+Clause Court deeply weaves Generative AI into every layer of its legal intelligence pipeline:
+
+| GenAI Component | Model / Engine | Prompt Strategy & Function | Output / Artifact |
+| :--- | :--- | :--- | :--- |
+| **Document Risk Extraction Engine** | Groq Llama-3.3-70B (`llama-3.3-70b-versatile`) / Gemini 3.8 Flash | Zero-shot legal risk classification inside `<document>` boundary tags; strict JSON schema enforcement | 0–100 Risk Score, 4-pillar liability breakdown, verbatim risk quotes |
+| **Multi-Agent Moot Court Chamber** | Multi-Turn LLM Dialogue Engine | 3 distinct adversarial roles: **Tenant Advocate** (consumer protection), **Landlord Advocate** (strict enforcement), **Neutral Magistrate** (judicial arbitration) | Live streaming adversarial arguments, evidence grounding, confidence-scored verdict |
+| **What-If Scenario Reasoning Engine** | Contextual Counterfactual Evaluator | Maps hypothetical breach scenarios (*"What if I terminate early due to health?"*) against document covenants | Concrete liability consequences, financial exposure assessment |
+| **Equitable Counter-Proposal Synthesizer** | Legal Prompt Engineering | Transforms unilateral covenants into balanced, bilateral contract language | Drop-in substitute contract clauses |
+| **Lawyer Brief Markdown Synthesizer** | Structured Document Summarizer | Distills audit results into executive summary, risk breakdown, and 8 consultation questions | Downloadable/printable 1-page `.md` briefing dossier |
+
+### GenAI Security & Guardrails
+- **Prompt Injection Defense**: All user-provided contract text is isolated inside `<document>` delimiters with input length enforcement to prevent system prompt injection or context overflow.
+- **Strict Verbatim Evidence Grounding**: The LLM is explicitly constrained to cite verbatim substrings from the source document, preventing hallucinations.
+- **Deterministic Heuristic Fallback**: In offline or zero-API environments, a deterministic regex/rule engine activates seamlessly to ensure continuous operation.
+
+---
+
 ## 📸 Core Interface & Workflow
 
 ```

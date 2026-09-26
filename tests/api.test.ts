@@ -97,4 +97,18 @@ describe('API — /api/analyze', () => {
     expect(res.body.totalRiskScore).toBeLessThanOrEqual(100);
     expect(Array.isArray(res.body.keyConcerns)).toBe(true);
   });
+
+  it('should return 400 when text exceeds 100,000 characters', async () => {
+    const hugeText = 'A'.repeat(100001);
+    const res = await testRequest('POST', '/api/analyze', { text: hugeText });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toContain('100,000 characters');
+  });
+
+  it('should return 400 in moot-court when text exceeds 100,000 characters', async () => {
+    const hugeText = 'B'.repeat(100001);
+    const res = await testRequest('POST', '/api/moot-court', { clauseText: hugeText });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toContain('100,000 characters');
+  });
 });

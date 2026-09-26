@@ -103,6 +103,7 @@ ${analysis.missingClauses.map(mc => `- **${mc.title}:** ${mc.description}\n  *Re
           </div>
           <button
             onClick={onClose}
+            aria-label="Close export modal"
             className="p-1 border border-[#141C2B]/16 text-[#767E8C] hover:text-[#141C2B] hover:bg-[#EFE9DD] cursor-pointer"
           >
             <X className="w-4 h-4" />
@@ -121,6 +122,7 @@ ${analysis.missingClauses.map(mc => `- **${mc.title}:** ${mc.description}\n  *Re
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopy}
+              aria-label="Copy legal brief markdown to clipboard"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B] bg-[#EFE9DD] text-[#141C2B] hover:bg-[#141C2B] hover:text-[#EFE9DD] transition-colors cursor-pointer"
             >
               {copied ? <Check className="w-3.5 h-3.5 text-[#2C4A8F]" /> : <Copy className="w-3.5 h-3.5" />}
@@ -128,6 +130,7 @@ ${analysis.missingClauses.map(mc => `- **${mc.title}:** ${mc.description}\n  *Re
             </button>
             <button
               onClick={handleDownload}
+              aria-label="Download legal brief as markdown file"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B]/20 bg-[#EFE9DD] text-[#4A5364] hover:text-[#141C2B] transition-colors cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
@@ -135,6 +138,7 @@ ${analysis.missingClauses.map(mc => `- **${mc.title}:** ${mc.description}\n  *Re
             </button>
             <button
               onClick={handlePrint}
+              aria-label="Print legal brief"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B]/20 bg-[#EFE9DD] text-[#4A5364] hover:text-[#141C2B] transition-colors cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5" />
@@ -144,6 +148,7 @@ ${analysis.missingClauses.map(mc => `- **${mc.title}:** ${mc.description}\n  *Re
 
           <button
             onClick={onClose}
+            aria-label="Close export dialog"
             className="px-4 py-1.5 font-mono text-[11px] tracking-[0.08em] uppercase border border-[#141C2B]/20 bg-[#EFE9DD] text-[#767E8C] hover:text-[#141C2B] cursor-pointer"
           >
             Close

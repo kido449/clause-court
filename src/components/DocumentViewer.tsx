@@ -105,6 +105,7 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
                   )}
                   <button
                     onClick={() => handleCopyClause(clause.clauseId, clause.text)}
+                    aria-label={`Copy clause ${clause.clauseId} text to clipboard`}
                     className="font-mono text-[10px] tracking-[0.08em] uppercase text-[#767E8C] hover:text-[#141C2B] flex items-center gap-1 cursor-pointer"
                   >
                     {copiedClauseId === clause.clauseId ? (

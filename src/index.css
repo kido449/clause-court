@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Newsreader", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "Courier Prime", "Courier New", Courier, monospace;
+  --color-ground: #EFE9DD;
+  --color-ground-secondary: #E5DED0;
+  --color-ink: #141C2B;
+  --color-ink-secondary: #4A5364;
+  --color-muted: #767E8C;
+  --color-ink-blue: #2C4A8F;
+}
+
+/* Strict Zero-Border-Radius & Zero-Shadow Constraints */
+*, *::before, *::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+:root {
+  --paper-ground: #EFE9DD;
+  --paper-ground-secondary: #E5DED0;
+  --ink-primary: #141C2B;
+  --ink-secondary: #4A5364;
+  --ink-muted: #767E8C;
+  --ink-blue: #2C4A8F;
+  --hairline-border: rgba(20, 28, 43, 0.16);
+}
+
+body {
+  background-color: #EFE9DD;
+  color: #141C2B;
+  font-family: 'Courier Prime', Courier, monospace;
+  font-size: 11.5px;
+  line-height: 1.9;
+  letter-spacing: 0.08em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* High-contrast text serif for all headings at letter-spacing -.02em */
+h1, h2, h3, h4, h5, h6, .heading-serif {
+  font-family: 'Newsreader', Georgia, serif;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  color: #141C2B;
+  line-height: 1.25;
+}
+
+/* Emphasised phrase: Newsreader ITALIC in the one ink blue */
+.emphasis-phrase, em.emphasis, .serif-italic-blue {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  color: #2C4A8F;
+  letter-spacing: -0.01em;
+}
+
+/* Typewriter monospace labels & body copy */
+.typewriter-label {
+  font-family: 'Courier Prime', Courier, monospace;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #767E8C;
+  line-height: 1.9;
+}
+
+.typewriter-body {
+  font-family: 'Courier Prime', Courier, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  line-height: 1.9;
+  color: #141C2B;
+}
+
+/* Stationery Hairlines & Rules */
+.stationery-rule {
+  border: 0;
+  border-top: 1px solid rgba(20, 28, 43, 0.16);
+}
+
+.stationery-rule-double {
+  border: 0;
+  border-top: 3px double rgba(20, 28, 43, 0.25);
+}
+
+.stationery-rule-blue {
+  border: 0;
+  border-top: 1px solid #2C4A8F;
+}
+
+/* Subtle scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #E5DED0;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 28, 43, 0.24);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #141C2B;
+}
+
+::selection {
+  background-color: #E5DED0;
+  color: #2C4A8F;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Contract Risk & AI Analysis Summary",
+  "description": "Document analysis platform calculating total risk scores and highlighting key AI-identified contract concerns, clause risks, and counter-proposals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

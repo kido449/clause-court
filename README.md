@@ -1,99 +1,156 @@
-# Clause Court ⚖️
+<div align="center">
 
-**Clause Court** is a contract "sparring partner" for non-lawyers. Non-lawyers frequently sign residential lease agreements without understanding hidden liability traps, unilateral renewal clauses, or ambiguous remedies. Clause Court provides document-grounded contract risk analysis, simulated moot court arguments between tenant and landlord advocates, what-if scenario testing, and lawyer brief generation.
+# ⚖️ Clause Court
 
-> **Disclaimer:** Information only, not legal advice.
+### *AI-Powered Contract Sparring Partner & Risk Intelligence Engine*
 
----
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live%20Demo-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://clause-court.vercel.app)
+[![React 19](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS-4.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Groq Llama-3.3-70b](https://img.shields.io/badge/Groq_LLM-Llama--3.3--70B-FF6C37?style=for-the-badge&logo=groq&logoColor=white)](https://groq.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-## 🚀 Key Features
+<br />
 
-1. **Document-Grounded Risk Scanner & Legal Linter:**
-   - Evaluates clauses and calculates an overall **Total Risk Score** (0–100) with a visual gauge and 4 pillar subscores (Financial Exposure, Liability & Indemnity, Termination Traps, and Ambiguity/Compliance).
-   - Lists prioritized **Key Concerns** with verbatim source quotes, risk impacts, and actionable counter-proposals.
-   - Enforces deterministic cross-clause linting (contradictions, dangling references, undefined terms, and hidden renewal traps).
-2. **Moot Court Sparring:**
-   - Real-time streaming debate between two AI advocates (Tenant Advocate vs. Landlord Advocate) followed by a neutral judge verdict with confidence level.
-3. **What-If Scenario Simulator:**
-   - Evaluates real-world situations (e.g., *"I leave after 4 months"*, *"Can the landlord keep my deposit?"*) with cited contractual evidence and explicit lists of unknowns.
-4. **Lawyer Brief Exporter:**
-   - Generates a concise, structured Markdown brief ready to print or share with legal counsel, including top issues, contested clauses, and 8 targeted questions.
+**[🌐 Live App](https://clause-court.vercel.app)** • **[🎬 Demo Script](#-video-demo--walkthrough)** • **[⚡ Quick Start](#-quick-start)** • **[🏗 Architecture](#-architecture--pipeline)**
 
----
+<br />
 
-## 🤖 AI Model Configuration: Free Groq API
+<p align="center">
+  <b>Clause Court protects non-lawyers from predatory contract traps</b> by providing document-grounded legal risk analysis, adversarial Moot Court simulations between tenant & landlord AI advocates, what-if scenario stress-testing, and instant lawyer brief generation.
+</p>
 
-Clause Court is powered by the **free Groq API** running `llama-3.3-70b-versatile`:
-- Standard `OpenAI` client configured with `base_url="https://api.groq.com/openai/v1"`
-- Fast inference speed (~500+ tokens/sec)
-- Automatic exponential backoff and retry handling for HTTP 429 rate limits
-- Built-in `MOCK_MODE` for running 100% offline without network or API keys
+</div>
 
 ---
 
-## 🛠️ Environment Variables
+> ⚠️ **Legal Disclaimer:** Clause Court is an informational AI legal assistant designed for risk awareness and contract sparring. It does **not** provide formal legal advice. Always consult a licensed attorney.
 
-Create a `.env` file in the root directory (or copy from `.env.example`):
+---
+
+## ✨ Key Capabilities
+
+| Feature | Description | GenAI Tech |
+| :--- | :--- | :--- |
+| **🚨 Visual Risk Score Gauge** | 0–100 risk score breakdown across 4 liability pillars (Financial, Indemnity, Traps, Ambiguity). | Heuristic & LLM Scoring |
+| **🔍 Verbatim Quote Hazards** | Pinpoints exact high-risk quotes, translates legalese, and generates ready-to-copy counter-proposals. | Llama-3.3-70B Extraction |
+| **⚔️ Moot Court AI Sparring** | Live streaming debate between AI Tenant & Landlord Advocates judged by an AI Magistrate. | Multi-Agent LLM Debate |
+| **🔮 What-If Scenario Tester** | Stress-tests real-world scenarios (*"What if I leave after 4 months?"*) against contract terms. | Scenario Reasoning Engine |
+| **📄 Split Inspector Workspace** | Side-by-side synchronized view linking risk highlights directly to full contract text. | Interactive UI Synchronization |
+| **📋 Lawyer Brief Exporter** | Executive Summary generation with 8 tailored legal questions for your attorney. | Structuring & Summarization |
+
+---
+
+## 📸 Core Interface & Workflow
+
+```
+┌────────────────────────────────────────────────────────────────────────────────┐
+│  ⚖️ CLAUSE COURT — CONTRACT RISK & MOOT COURT AGENT                              │
+├────────────────────────────────┬───────────────────────────────────────────────┤
+│ 📊 Risk Score: 88 / 100         │ 🛡️ KEY CONCERNS & COUNTER-PROPOSALS            │
+│ 🔴 CRITICAL RISK DETECTED      │ ───────────────────────────────────────────── │
+│                                │ 1. Uncapped Indemnity for Landlord Negligence │
+│ • Financial Exposure: 85/100   │    Quote: "Tenant indemnifies Landlord..."    │
+│ • Liability Trap:     92/100   │    Counter: "Indemnity capped at $5,000..."    │
+│ • Ambiguity Level:    74/100   │                                               │
+├────────────────────────────────┴───────────────────────────────────────────────┤
+│ ⚔️ MOOT COURT SIMULATION:                                                       │
+│ 🔵 Tenant Advocate: "Clause 4 violates consumer protection standards..."       │
+│ 🔴 Landlord Advocate: "Standard commercial risk allocation is enforceable..."   │
+│ ⚖️ AI Magistrate Verdict: CONTESTED / AMBIGUOUS (85% Confidence)              │
+└────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## ⚡ Quick Start
+
+### 1. Clone & Install Dependencies
+
+Ensure you have **Node.js 18+** installed:
 
 ```bash
-# Groq API Configuration
+# Clone the repository
+git clone https://github.com/kido449/clause-court.git
+cd clause-court
+
+# Install npm packages
+npm install
+```
+
+### 2. Configure Environment
+
+Copy `.env.example` to `.env`:
+
+```bash
+cp .env.example .env
+```
+
+Edit your `.env` parameters:
+
+```env
 GROQ_API_KEY="gsk_your-groq-api-key"
 MODEL_NAME="llama-3.3-70b-versatile"
-
-# Mock Mode (set to "false" to use live Groq API, or "true" for zero-key offline demo)
 MOCK_MODE="false"
 ```
 
----
+> 💡 **Zero-Key Offline Demo:** Set `MOCK_MODE="true"` to run 100% offline with zero external network dependencies!
 
-## 💻 Local Setup & Run Commands
-
-### 1. Frontend & Single-Origin Preview
-Run the web application:
+### 3. Run Development Server
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server on port 3000
 npm run dev
 ```
 
-The app will be available at `http://localhost:3000`.
-
-### 2. Standalone Python Backend (FastAPI)
-Run the Python FastAPI backend:
-
-```bash
-# Install Python dependencies
-pip install fastapi uvicorn openai sse-starlette pypdf
-
-# Launch FastAPI server on port 8000
-uvicorn backend.app.main:app --port 8000 --reload
-```
+Visit `http://localhost:3000` in your web browser.
 
 ---
 
-## ⏱️ 2-Minute Demo Script
+## 🏗 Architecture & Pipeline
 
-1. **0:00 – 0:30 | Scanning the Agreement & Total Risk Score:**
-   - Select the pre-loaded **"Commercial Office Lease"** or **"Residential Rental Agreement"** from the top selector.
-   - Point out the **Total Risk Score Gauge** showing a **Critical / High Risk** rating, and the four pillar subscores.
-   - Show the executive summary highlighting key traps (e.g. unilateral lockout, uncapped indemnification, automatic multi-year renewal).
+```mermaid
+graph TD
+    A[Contract Document / PDF] --> B[Clause Splitter & Linter]
+    B --> C{API Mode}
+    C -->|MOCK_MODE=true| D[Precomputed Fallback Analyzer]
+    C -->|MOCK_MODE=false| E[Groq Llama-3.3-70B LLM Engine]
+    D --> F[Clause Court UI Engine]
+    E --> F
+    F --> G[Risk Score Gauge & Pillars]
+    F --> H[Key Concerns & Counter-Proposals]
+    F --> I[Moot Court Multi-Agent Debate]
+    F --> J[What-If Scenario Reasoning]
+    F --> K[Lawyer Brief Generator]
+```
 
-2. **0:30 – 1:00 | Inspecting Key Concerns & Verbatim Evidence:**
-   - In the **Key Concerns** list, expand **"KC-1: Uncapped Indemnity for Landlord Negligence"**.
-   - Note the **Exact Contract Quote** copied verbatim from the document text and the "AI Hazard Analysis".
-   - Click the clause reference to jump straight to the clause highlighted in the contract text.
-   - Show the one-click **"Copy Counter-Proposal"** button for negotiating revised phrasing.
+### Tech Stack Details
 
-3. **1:00 – 1:30 | Moot Court Live Sparring:**
-   - Select a contested clause (e.g. **Clause C4: Maintenance & Indemnity**).
-   - Launch the Moot Court: watch the **Tenant Advocate** argue that the clause imposes disproportionate burdens without reciprocal duty.
-   - Watch the **Landlord Advocate** rebut with standard commercial lease arguments.
-   - Observe the **Neutral Judge** deliver a verdict (Contested / Ambiguous) with confidence ratings and recommendations.
+- **Frontend**: React 19, TypeScript, Tailwind CSS 4, Lucide Icons, Canvas Confetti
+- **Build System**: Vite 8.3
+- **API Server Middleware**: Express API (`server/api.ts`)
+- **LLM Engine**: Groq API (`llama-3.3-70b-versatile`) with OpenAI SDK compatibility
+- **Python Service (Optional)**: FastAPI Service (`backend/app/main.py`)
 
-4. **1:30 – 2:00 | What-If Simulation & Legal Brief Export:**
-   - Type or select a scenario in the What-If tester: *"What if I terminate my lease early after 4 months?"*
-   - Review the step-by-step contractual outcome citing evidence, and note the explicit list of *"What the contract does NOT say"*.
-   - Click **"Export Brief"** to preview and download the one-page Markdown summary with 8 specific questions to ask an attorney.
+---
+
+## 🎬 Video Demo & Walkthrough
+
+Check out our under-4-minute demo walkthrough script or test the live app flow:
+
+1. **Load Commercial Lease**: Watch the visual Risk Meter animate to `88/100`.
+2. **Review Key Concerns**: Inspect verbatim quotes, risk ratings, and counter-proposals.
+3. **Launch Moot Court**: Click **Simulate Moot Court** to watch live AI streaming legal arguments.
+4. **Export Brief**: Generate a structured Executive Summary with prioritized attorney questions.
+
+---
+
+## 📄 License
+
+Distributed under the MIT License.
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ for non-lawyers everywhere • Powered by Groq & Llama-3.3</sub>
+</div>
